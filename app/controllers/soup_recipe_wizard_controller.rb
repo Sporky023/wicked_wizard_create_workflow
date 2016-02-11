@@ -14,8 +14,6 @@ class SoupRecipeWizardController < ApplicationController
     @recipe.assign_attributes(recipe_params)
 
     if recipe_valid_for_this_step?
-      binding.pry
-
       if step == :spices
         @recipe.save!
         session.delete(:wizard_recipe_attributes)
@@ -25,9 +23,8 @@ class SoupRecipeWizardController < ApplicationController
       end
 
       redirect_to url_after_update
-    else
-      binding.pry
 
+    else
       render_step step # re-render the same form we just saw
     end
   end
