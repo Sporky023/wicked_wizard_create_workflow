@@ -1,0 +1,6 @@
+%h1 this soup recipe:
+
+%dl
+  - @recipe.attributes.keys.each do |attr_name|
+    %dt= attr_name
+    %dd= @recipe[attr_name]

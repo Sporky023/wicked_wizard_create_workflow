@@ -1,0 +1,6 @@
+= simple_form_for(@recipe, url: wizard_path, method: :put) do |f|
+  = f.input :veggie_1, as: :select, collection: ['carrots', 'peas', 'taters']
+  = f.input :veggie_2
+
+  = f.submit class: 'btn btn-primary'
+
